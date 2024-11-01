@@ -1,0 +1,22 @@
+services:
+
+  app:
+    build:
+      context: .
+    depends_on:
+        database:
+          condition: service_started
+    ports:
+      - 8080:8080
+
+
+  database:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata6:/data/db
+
+volumes:
+  dbdata6:
+
