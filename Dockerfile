@@ -9,7 +9,7 @@ RUN mvn clean package -Dmaven.test.skip=true
 
 
 # RTSDK Java
-FROM openjdk:17-jdk-alpine
+FROM amazoncorretto:17.0.7-alpine
 WORKDIR /app
 COPY --from=builder /app/target/mu-server-demo-1.0-SNAPSHOT-jar-with-dependencies.jar .
 
